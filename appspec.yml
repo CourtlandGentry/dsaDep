@@ -2,9 +2,14 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /tmp
+    destination: /tmp/codeD_scripts
+permissions:
+  - object: /tmp/codeD_scripts
+    pattern: "**"
+    type:
+      - file
 hooks:
   BeforeInstall:
-    - location: /tmp/DSaaS_DSADeploymentScript.sh
+    - location: DSaaS_DSADeploymentScript.sh
       timeout: 300
       runas: root
